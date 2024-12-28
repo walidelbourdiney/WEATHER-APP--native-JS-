@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", "Poppins", sans-serif;
+  line-height: 1.5;
+  color: black;
+  background-color: #ffffff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bolder;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: hsl(160, 63%, 34%);
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  color: #f9f9f9;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: hsl(160, 63%, 10%);
+}
+button:hover {
+  background-color: hsl(160, 63%, 5%);
+  color: #f9f9f9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#location {
+  height: 1.8rem;
+  border-radius: 5px;
+  outline: none;
+  padding: 12px 16px; /* Comfortable padding */
+  border: 1px solid #ccc; /* Subtle border */
+  font-size: 16px; /* Readable font size */
+  font-family: sans-serif; /* Modern font family (adjust as needed) */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+input::placeholder,
+textarea::placeholder {
+  /* Style placeholder text */
+  color: #aaa;
+  font-style: italic;
+}
+
+input:focus,
+textarea:focus {
+  background-color: hsla(160, 63%, 80%, 0.432); /* Very light gray background */
+  color: azure;
+}
+
+/* Optional: Styling for invalid input */
+input:invalid {
+  border-color: #dc3545; /* Red border for invalid input */
+}
+.informations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+}
