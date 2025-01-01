@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character encoding and viewport settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="styles.css" />
     <title>WEATHER APP</title>
   </head>
   <body>
+    <!-- Main container with flex layout -->
     <div class="container flex">
+      <!-- Weather search form -->
       <form>
         <input id="location" type="text" placeholder="Enter Location .." />
         <button type="submit" id="submit">Get Weather</button>
       </form>
+      <!-- Container for weather information (hidden by default) -->
       <div class="informations" style="display: none"></div>
     </div>
 
+    <!-- Link to JavaScript file -->
     <script src="index.js"></script>
   </body>
 </html>

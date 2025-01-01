@@ -1,21 +1,23 @@
-/* Modern CSS Reset */
+/* Modern CSS Reset - Removes default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* CSS Custom Properties (Variables) for consistent theming */
 :root {
-  --primary: #2c7a7b;
-  --primary-light: #38b2ac;
-  --primary-dark: #234e52;
-  --secondary: #f6e05e;
-  --text: #2d3748;
-  --background: #ebf8ff;
-  --white: #ffffff;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --primary: #2c7a7b;      /* Main brand color */
+  --primary-light: #38b2ac; /* Lighter shade of primary */
+  --primary-dark: #234e52;  /* Darker shade of primary */
+  --secondary: #f6e05e;     /* Accent color */
+  --text: #2d3748;         /* Main text color */
+  --background: #ebf8ff;    /* Background color */
+  --white: #ffffff;         /* White color */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Standard shadow */
 }
 
+/* Body styles with centered content and gradient background */
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
@@ -28,6 +30,7 @@ body {
   padding: 20px;
 }
 
+/* Main container styles with hover effect */
 .container {
   max-width: 800px;
   width: 100%;
@@ -40,15 +43,18 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Container hover animation */
 .container:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Form spacing */
 form {
   margin-bottom: 2rem;
 }
 
+/* Location input field styles */
 #location {
   width: 70%;
   height: 3rem;
@@ -60,6 +66,7 @@ form {
   transition: all 0.3s ease;
 }
 
+/* Input focus state */
 #location:focus {
   outline: none;
   border-color: var(--primary);
@@ -67,6 +74,7 @@ form {
   box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.2);
 }
 
+/* Button styles */
 button {
   height: 3rem;
   padding: 0 1.5rem;
@@ -80,11 +88,13 @@ button {
   transition: all 0.3s ease;
 }
 
+/* Button hover state */
 button:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
 }
 
+/* Weather information container */
 .informations {
   opacity: 0;
   transform: translateY(20px);
@@ -94,6 +104,7 @@ button:hover {
   border-radius: 15px;
 }
 
+/* Weather information typography */
 .informations h1 {
   color: var(--primary-dark);
   font-size: 2.5rem;
@@ -111,20 +122,18 @@ button:hover {
   font-size: 1.2rem;
 }
 
-/* Weather emoji styling */
-.informations h2:last-child {
-  font-size: 4rem;
-  margin-top: 1rem;
-}
-
+/* Weather emoji specific styling */
 .weather-emoji {
   font-size: 6rem;
   margin-top: 1.5rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   animation: floatEmoji 3s ease-in-out infinite;
+  /* Reset inherited styles to show original emoji colors */
   color: initial;
   -webkit-text-fill-color: initial;
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Android Emoji", "EmojiSymbols";
+  /* Emoji font stack for cross-platform compatibility */
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 
+               "Noto Color Emoji", "Android Emoji", "EmojiSymbols";
   font-style: normal;
   font-weight: normal;
   background: none;
@@ -132,11 +141,13 @@ button:hover {
   filter: none;
 }
 
+/* Floating animation for emoji */
 @keyframes floatEmoji {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
+/* Fade in animation for weather information */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -148,7 +159,7 @@ button:hover {
   }
 }
 
-/* Responsive Design */
+/* Responsive Design for mobile devices */
 @media screen and (max-width: 768px) {
   .container {
     padding: 1rem;
