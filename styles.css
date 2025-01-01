@@ -1,94 +1,171 @@
+/* Modern CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary: #2c7a7b;
+  --primary-light: #38b2ac;
+  --primary-dark: #234e52;
+  --secondary: #f6e05e;
+  --text: #2d3748;
+  --background: #ebf8ff;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 body {
-  font-family: "Montserrat", "Poppins", sans-serif;
-  line-height: 1.5;
-  color: black;
-  background-color: #ffffff;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bolder;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: hsl(160, 63%, 34%);
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.flex {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--background), var(--white));
+  min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+#location {
+  width: 70%;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: var(--background);
+  transition: all 0.3s ease;
+}
+
+#location:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.2);
 }
 
 button {
-  color: #f9f9f9;
-  padding: 0.5rem 1rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  margin-left: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 600;
   cursor: pointer;
-  background-color: hsl(160, 63%, 10%);
+  transition: all 0.3s ease;
 }
+
 button:hover {
-  background-color: hsl(160, 63%, 5%);
-  color: #f9f9f9;
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  width: 50%;
+.informations {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+  padding: 2rem;
+  background-color: var(--background);
+  border-radius: 15px;
 }
 
-@media screen and (max-width: 768px) {
-  .flex {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.informations h1 {
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.informations h2 {
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.informations h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+/* Weather emoji styling */
+.informations h2:last-child {
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-#location {
-  height: 1.8rem;
-  border-radius: 5px;
-  outline: none;
-  padding: 12px 16px; /* Comfortable padding */
-  border: 1px solid #ccc; /* Subtle border */
-  font-size: 16px; /* Readable font size */
-  font-family: sans-serif; /* Modern font family (adjust as needed) */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #location {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .informations h1 {
+    font-size: 2rem;
+  }
+
+  .informations h2 {
+    font-size: 1.5rem;
+  }
 }
 
-input::placeholder,
-textarea::placeholder {
-  /* Style placeholder text */
-  color: #aaa;
-  font-style: italic;
+/* Loading animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-input:focus,
-textarea:focus {
-  background-color: hsla(160, 63%, 80%, 0.432); /* Very light gray background */
-  color: azure;
-}
-
-/* Optional: Styling for invalid input */
-input:invalid {
-  border-color: #dc3545; /* Red border for invalid input */
-}
-.informations {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px 10px;
+.loading {
+  animation: pulse 1.5s infinite;
 }

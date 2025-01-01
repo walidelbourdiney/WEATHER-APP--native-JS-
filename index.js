@@ -22,6 +22,7 @@ weatherForm.addEventListener("submit", async (event) => {
   const location = locationInput.value;
   if (location) {
     try {
+      infoDisplay.classList.add('loading');
       const weatherData = await getWeather(location);
       displayData(weatherData);
     } catch (error) {
@@ -51,6 +52,7 @@ function displayData(data) {
         <h2>${data.weather[0].description}</h2>
         <h2>${displayEmoji(data.weather[0].id)}</h2>`;
   infoDisplay.style.display = "block";
+  infoDisplay.classList.remove('loading');
 }
 
 function displayEmoji(weatherId) {
