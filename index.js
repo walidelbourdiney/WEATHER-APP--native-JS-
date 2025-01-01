@@ -50,7 +50,7 @@ function displayData(data) {
         <h2>${celsius.toFixed(2)} °C</h2>
         <h3>Humidity: ${data.main.humidity}%</h3>
         <h2>${data.weather[0].description}</h2>
-        <h2>${displayEmoji(data.weather[0].id)}</h2>`;
+        <p class="weather-emoji">${displayEmoji(data.weather[0].id)}</p>`;
   infoDisplay.style.display = "block";
   infoDisplay.classList.remove('loading');
 }

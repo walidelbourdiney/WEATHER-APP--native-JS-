@@ -117,6 +117,26 @@ button:hover {
   margin-top: 1rem;
 }
 
+.weather-emoji {
+  font-size: 6rem;
+  margin-top: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  animation: floatEmoji 3s ease-in-out infinite;
+  color: initial;
+  -webkit-text-fill-color: initial;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Android Emoji", "EmojiSymbols";
+  font-style: normal;
+  font-weight: normal;
+  background: none;
+  border: none;
+  filter: none;
+}
+
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -156,6 +176,10 @@ button:hover {
 
   .informations h2 {
     font-size: 1.5rem;
+  }
+
+  .weather-emoji {
+    font-size: 4.5rem;
   }
 }
 
